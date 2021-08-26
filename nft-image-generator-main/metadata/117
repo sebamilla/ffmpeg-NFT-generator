@@ -1,0 +1,27 @@
+{
+    "image": "ADD_IMAGES_BASE_URI_HERE117.png",
+    "tokenId": 117,
+    "name": "ADD_PROJECT_NAME_HERE 117",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Orange"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Yellow"
+        },
+        {
+            "trait_type": "Head",
+            "value": "Green"
+        },
+        {
+            "trait_type": "Face",
+            "value": "Blue"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Red"
+        }
+    ]
+}

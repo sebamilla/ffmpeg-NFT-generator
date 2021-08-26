@@ -1,0 +1,27 @@
+{
+    "image": "ADD_IMAGES_BASE_URI_HERE159.png",
+    "tokenId": 159,
+    "name": "ADD_PROJECT_NAME_HERE 159",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Blue"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Green"
+        },
+        {
+            "trait_type": "Head",
+            "value": "Red"
+        },
+        {
+            "trait_type": "Face",
+            "value": "Green"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Blue"
+        }
+    ]
+}
