@@ -1,16 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[49]:
-
 
 from PIL import Image 
 from IPython.display import display 
 import random
 import json
-
-
-# In[50]:
 
 
 # Each image is made up a series of traits
@@ -77,9 +72,6 @@ hair_files = {
 }
 
 
-# In[51]:
-
-
 ## Generate Traits
 
 TOTAL_IMAGES = 300 # Number of random unique images we want to generate
@@ -113,18 +105,12 @@ for i in range(TOTAL_IMAGES):
     
 
 
-# In[52]:
-
-
 # Returns true if all images are unique
 def all_images_unique(all_images):
     seen = list()
     return not any(i in seen or seen.append(i) for i in all_images)
 
 print("Are all images unique?", all_images_unique(all_images))
-
-
-# In[53]:
 
 
 # Add token Id to each image
@@ -134,13 +120,7 @@ for item in all_images:
     i = i + 1
 
 
-# In[54]:
-
-
 print(all_images)
-
-
-# In[55]:
 
 
 # Get Trait Counts
@@ -179,17 +159,10 @@ print(face_count)
 print(hair_count)
 
 
-# In[56]:
-
-
 #### Generate Metadata for all Traits 
 METADATA_FILE_NAME = './metadata/all-traits.json'; 
 with open(METADATA_FILE_NAME, 'w') as outfile:
     json.dump(all_images, outfile, indent=4)
-
-
-# In[57]:
-
 
 
   
@@ -214,11 +187,6 @@ for item in all_images:
   file_name = str(item["tokenId"]) + ".png"
   rgb_im.save("./images/" + file_name)
   
-  
-  
-
-
-# In[58]:
 
 
 #### Generate Metadata for each Image    
@@ -252,10 +220,3 @@ for i in data:
     with open('./metadata/' + str(token_id), 'w') as outfile:
         json.dump(token, outfile, indent=4)
 f.close()
-
-
-# In[ ]:
-
-
-
-
