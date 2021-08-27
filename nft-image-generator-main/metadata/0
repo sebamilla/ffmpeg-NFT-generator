@@ -1,5 +1,5 @@
 {
-    "image": "ADD_IMAGES_BASE_URI_HERE0.png",
+    "image": "ADD_IMAGES_BASE_URI_HERE0.mov",
     "tokenId": 0,
     "name": "ADD_PROJECT_NAME_HERE 0",
     "attributes": [
@@ -21,7 +21,7 @@
         },
         {
             "trait_type": "Hair",
-            "value": "Yellow"
+            "value": "Blue"
         }
     ]
 }

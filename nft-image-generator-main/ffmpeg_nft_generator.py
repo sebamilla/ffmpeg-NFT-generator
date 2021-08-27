@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-from PIL import Image 
+import moviepy.editor as mpe
 from IPython.display import display 
 import random
 import json
@@ -75,7 +75,7 @@ hair_files = {
 
 ## Generate Traits
 
-TOTAL_IMAGES = 300 # Number of random unique images we want to generate
+TOTAL_IMAGES = 2 # Number of random unique images we want to generate
 
 all_images = [] 
 
@@ -169,29 +169,19 @@ with open(METADATA_FILE_NAME, 'w') as outfile:
     json.dump(all_images, outfile, indent=4)
 
 
+#### Generate videos with ffmpeg
 
-  
-#### Generate Images    
 for item in all_images:
 
-  im1 = Image.open(f'./trait-layers/backgrounds/{background_files[item["Background"]]}.png').convert('RGBA')
-  im2 = Image.open(f'./trait-layers/bodies/{body_files[item["Body"]]}.png').convert('RGBA')
-  im3 = Image.open(f'./trait-layers/heads/{head_files[item["Head"]]}.png').convert('RGBA')
-  im4 = Image.open(f'./trait-layers/faces/{face_files[item["Face"]]}.png').convert('RGBA')
-  im5 = Image.open(f'./trait-layers/hairs/{hair_files[item["Hair"]]}.png').convert('RGBA')
+    clip1 = mpe.VideoFileClip(f'./trait-layers-video/backgrounds/{background_files[item["Background"]]}.mov')
+    clip2 = mpe.VideoFileClip(f'./trait-layers-video/bodies/{body_files[item["Body"]]}.mov', has_mask=True)
+    clip3 = mpe.VideoFileClip(f'./trait-layers-video/heads/{head_files[item["Head"]]}.mov', has_mask=True)
+    clip4 = mpe.VideoFileClip(f'./trait-layers-video/faces/{face_files[item["Face"]]}.mov', has_mask=True)
+    clip5 = mpe.VideoFileClip(f'./trait-layers-video/hairs/{hair_files[item["Hair"]]}.mov', has_mask=True)
+    full_clip = mpe.CompositeVideoClip([clip1, clip2, clip3, clip4, clip5])
 
-  
-  #Create each composite
-  com1 = Image.alpha_composite(im1, im2)
-  com2 = Image.alpha_composite(com1, im3)
-  com3 = Image.alpha_composite(com2, im4)
-  com4 = Image.alpha_composite(com3, im5)
+    full_clip.write_videofile(f"./videos/{str(item['tokenId'])}.mp4") 
 
-  #Convert to RGB
-  rgb_im = com4.convert('RGB')
-  file_name = str(item["tokenId"]) + ".png"
-  rgb_im.save("./images/" + file_name)
-  
 
 #### Generate Metadata for each Image    
 
@@ -210,7 +200,7 @@ def getAttribute(key, value):
 for i in data:
     token_id = i['tokenId']
     token = {
-        "image": IMAGES_BASE_URI + str(token_id) + '.png',
+        "image": IMAGES_BASE_URI + str(token_id) + '.mov',
         "tokenId": token_id,
         "name": PROJECT_NAME + ' ' + str(token_id),
         "attributes": []

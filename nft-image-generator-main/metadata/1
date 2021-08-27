@@ -1,5 +1,5 @@
 {
-    "image": "ADD_IMAGES_BASE_URI_HERE1.png",
+    "image": "ADD_IMAGES_BASE_URI_HERE1.mov",
     "tokenId": 1,
     "name": "ADD_PROJECT_NAME_HERE 1",
     "attributes": [
@@ -13,11 +13,11 @@
         },
         {
             "trait_type": "Head",
-            "value": "Green"
+            "value": "Blue"
         },
         {
             "trait_type": "Face",
-            "value": "Orange"
+            "value": "Blue"
         },
         {
             "trait_type": "Hair",
