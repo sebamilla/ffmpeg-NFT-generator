@@ -1,0 +1,82 @@
+[
+    {
+        "Background": "Purple",
+        "Body": "Blue",
+        "Head": "Green",
+        "Face": "Blue",
+        "Hair": "Blue",
+        "tokenId": 0
+    },
+    {
+        "Background": "Orange",
+        "Body": "Blue",
+        "Head": "Yellow",
+        "Face": "Yellow",
+        "Hair": "Green",
+        "tokenId": 1
+    },
+    {
+        "Background": "Blue",
+        "Body": "Orange",
+        "Head": "Yellow",
+        "Face": "Orange",
+        "Hair": "Blue",
+        "tokenId": 2
+    },
+    {
+        "Background": "Blue",
+        "Body": "Orange",
+        "Head": "Green",
+        "Face": "Yellow",
+        "Hair": "Green",
+        "tokenId": 3
+    },
+    {
+        "Background": "Orange",
+        "Body": "Orange",
+        "Head": "Green",
+        "Face": "Green",
+        "Hair": "Yellow",
+        "tokenId": 4
+    },
+    {
+        "Background": "Blue",
+        "Body": "Blue",
+        "Head": "Red",
+        "Face": "Green",
+        "Hair": "Red",
+        "tokenId": 5
+    },
+    {
+        "Background": "Purple",
+        "Body": "Orange",
+        "Head": "Blue",
+        "Face": "Blue",
+        "Hair": "Green",
+        "tokenId": 6
+    },
+    {
+        "Background": "Blue",
+        "Body": "Blue",
+        "Head": "Blue",
+        "Face": "Blue",
+        "Hair": "Green",
+        "tokenId": 7
+    },
+    {
+        "Background": "Orange",
+        "Body": "Green",
+        "Head": "Yellow",
+        "Face": "Red",
+        "Hair": "Blue",
+        "tokenId": 8
+    },
+    {
+        "Background": "Orange",
+        "Body": "Green",
+        "Head": "Blue",
+        "Face": "Red",
+        "Hair": "Yellow",
+        "tokenId": 9
+    }
+]

@@ -9,7 +9,7 @@ import json
 
 
 
-# Each image is made up a series of traits
+# Each video is made up a series of traits
 # The weightings for each trait drive the rarity and add up to 100%
 
 background = ["Blue", "Orange", "Purple", "Red", "Yellow"] 
@@ -75,56 +75,56 @@ hair_files = {
 
 ## Generate Traits
 
-TOTAL_IMAGES = 2 # Number of random unique images we want to generate
+TOTAL_VIDEOS = 10 # Number of random unique videos we want to generate
 
-all_images = [] 
+all_videos = [] 
 
-# A recursive function to generate unique image combinations
-def create_new_image():
+# A recursive function to generate unique video combinations
+def create_new_video():
     
-    new_image = {} #
+    new_video = {} #
 
     # For each trait category, select a random trait based on the weightings 
-    new_image ["Background"] = random.choices(background, background_weights)[0]
-    new_image ["Body"] = random.choices(body, body_weights)[0]
-    new_image ["Head"] = random.choices(head, head_weights)[0]
-    new_image ["Face"] = random.choices(face, face_weights)[0]
-    new_image ["Hair"] = random.choices(hair, hair_weights)[0]
+    new_video ["Background"] = random.choices(background, background_weights)[0]
+    new_video ["Body"] = random.choices(body, body_weights)[0]
+    new_video ["Head"] = random.choices(head, head_weights)[0]
+    new_video ["Face"] = random.choices(face, face_weights)[0]
+    new_video ["Hair"] = random.choices(hair, hair_weights)[0]
     
-    if new_image in all_images:
-        return create_new_image()
+    if new_video in all_videos:
+        return create_new_video()
     else:
-        return new_image
+        return new_video
     
     
 # Generate the unique combinations based on trait weightings
-for i in range(TOTAL_IMAGES): 
+for i in range(TOTAL_VIDEOS): 
     
-    new_trait_image = create_new_image()
+    new_trait_video = create_new_video()
     
-    all_images.append(new_trait_image)
+    all_videos.append(new_trait_video)
     
 
 
 
-# Returns true if all images are unique
-def all_images_unique(all_images):
+# Returns true if all videos are unique
+def all_videos_unique(all_videos):
     seen = list()
-    return not any(i in seen or seen.append(i) for i in all_images)
+    return not any(i in seen or seen.append(i) for i in all_videos)
 
-print("Are all images unique?", all_images_unique(all_images))
+print("Are all videos unique?", all_videos_unique(all_videos))
 
 
 
-# Add token Id to each image
+# Add token Id to each video
 i = 0
-for item in all_images:
+for item in all_videos:
     item["tokenId"] = i
     i = i + 1
 
 
 
-print(all_images)
+print(all_videos)
 
 
 # Get Trait Counts
@@ -149,12 +149,12 @@ hair_count = {}
 for item in hair:
     hair_count[item] = 0
 
-for image in all_images:
-    background_count[image["Background"]] += 1
-    body_count[image["Body"]] += 1
-    head_count[image["Head"]] += 1
-    face_count[image["Face"]] += 1
-    hair_count[image["Hair"]] += 1
+for video in all_videos:
+    background_count[video["Background"]] += 1
+    body_count[video["Body"]] += 1
+    head_count[video["Head"]] += 1
+    face_count[video["Face"]] += 1
+    hair_count[video["Hair"]] += 1
     
 print(background_count)
 print(body_count)
@@ -164,14 +164,14 @@ print(hair_count)
 
 
 #### Generate Metadata for all Traits 
-METADATA_FILE_NAME = './metadata/all-traits.json'; 
+METADATA_FILE_NAME = './metadata-video/all-traits.json'; 
 with open(METADATA_FILE_NAME, 'w') as outfile:
-    json.dump(all_images, outfile, indent=4)
+    json.dump(all_videos, outfile, indent=4)
 
 
 #### Generate videos with ffmpeg
 
-for item in all_images:
+for item in all_videos:
 
     clip1 = mpe.VideoFileClip(f'./trait-layers-video/backgrounds/{background_files[item["Background"]]}.mov')
     clip2 = mpe.VideoFileClip(f'./trait-layers-video/bodies/{body_files[item["Body"]]}.mov', has_mask=True)
@@ -180,16 +180,16 @@ for item in all_images:
     clip5 = mpe.VideoFileClip(f'./trait-layers-video/hairs/{hair_files[item["Hair"]]}.mov', has_mask=True)
     full_clip = mpe.CompositeVideoClip([clip1, clip2, clip3, clip4, clip5])
 
-    full_clip.write_videofile(f"./videos/{str(item['tokenId'])}.mp4") 
+    full_clip.write_videofile(f"./videos/{str(item['tokenId'])}.mp4", fps=12, audio=False) 
 
 
 #### Generate Metadata for each Image    
 
-f = open('./metadata/all-traits.json',) 
+f = open('./metadata-video/all-traits.json',) 
 data = json.load(f)
 
 
-IMAGES_BASE_URI = "ADD_IMAGES_BASE_URI_HERE"
+VIDEOS_BASE_URI = "ADD_VIDEOS_BASE_URI_HERE"
 PROJECT_NAME = "ADD_PROJECT_NAME_HERE"
 
 def getAttribute(key, value):
@@ -200,7 +200,7 @@ def getAttribute(key, value):
 for i in data:
     token_id = i['tokenId']
     token = {
-        "image": IMAGES_BASE_URI + str(token_id) + '.mov',
+        "video": VIDEOS_BASE_URI + str(token_id) + '.mov',
         "tokenId": token_id,
         "name": PROJECT_NAME + ' ' + str(token_id),
         "attributes": []
@@ -211,6 +211,6 @@ for i in data:
     token["attributes"].append(getAttribute("Face", i["Face"]))
     token["attributes"].append(getAttribute("Hair", i["Hair"]))
 
-    with open('./metadata/' + str(token_id), 'w') as outfile:
+    with open('./metadata-video/' + str(token_id), 'w') as outfile:
         json.dump(token, outfile, indent=4)
 f.close()
