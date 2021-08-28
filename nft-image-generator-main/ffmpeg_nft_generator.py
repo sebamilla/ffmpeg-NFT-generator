@@ -3,7 +3,6 @@
 
 
 import moviepy.editor as mpe
-from IPython.display import display 
 import random
 import json
 
@@ -13,19 +12,19 @@ import json
 # The weightings for each trait drive the rarity and add up to 100%
 
 background = ["Blue", "Orange", "Purple", "Red", "Yellow"] 
-background_weights = [30, 40, 15, 5, 10]
+background_weights = [30, 44, 15, 1, 10]
 
 body = ["Blue", "Green", "Orange", "Red", "Yellow"] 
-body_weights = [30, 40, 15, 5, 10]
+body_weights = [34, 40, 15, 10, 1]
 
 head = ["Blue", "Green", "Red", "Yellow"] 
-head_weights = [30, 40, 20, 10]
+head_weights = [40, 40, 19, 1]
 
 face = ["Blue", "Green", "Orange", "Red", "Yellow"] 
-face_weights = [30, 40, 15, 5, 10]
+face_weights = [30, 40, 15, 1, 14]
 
 hair = ["Blue", "Green", "Orange", "Red", "Yellow"] 
-hair_weights = [30, 40, 15, 5, 10]
+hair_weights = [30, 1, 15, 45, 10]
 
 
 
@@ -180,7 +179,7 @@ for item in all_videos:
     clip5 = mpe.VideoFileClip(f'./trait-layers-video/hairs/{hair_files[item["Hair"]]}.mov', has_mask=True)
     full_clip = mpe.CompositeVideoClip([clip1, clip2, clip3, clip4, clip5])
 
-    full_clip.write_videofile(f"./videos/{str(item['tokenId'])}.mp4", fps=12, audio=False) 
+    full_clip.write_videofile(f"./videos/{str(item['tokenId'])}.mp4", threads=286, fps=12, audio=False) 
 
 
 #### Generate Metadata for each Image    

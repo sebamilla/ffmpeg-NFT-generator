@@ -1,5 +1,5 @@
 {
-    "image": "ADD_IMAGES_BASE_URI_HERE3.mov",
+    "video": "ADD_VIDEOS_BASE_URI_HERE3.mov",
     "tokenId": 3,
     "name": "ADD_PROJECT_NAME_HERE 3",
     "attributes": [
@@ -9,19 +9,19 @@
         },
         {
             "trait_type": "Body",
-            "value": "Orange"
+            "value": "Red"
         },
         {
             "trait_type": "Head",
-            "value": "Green"
+            "value": "Blue"
         },
         {
             "trait_type": "Face",
-            "value": "Yellow"
+            "value": "Blue"
         },
         {
             "trait_type": "Hair",
-            "value": "Green"
+            "value": "Yellow"
         }
     ]
 }

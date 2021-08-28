@@ -1,82 +1,82 @@
 [
     {
-        "Background": "Purple",
-        "Body": "Blue",
+        "Background": "Orange",
+        "Body": "Green",
         "Head": "Green",
-        "Face": "Blue",
-        "Hair": "Blue",
+        "Face": "Yellow",
+        "Hair": "Red",
         "tokenId": 0
     },
     {
-        "Background": "Orange",
+        "Background": "Yellow",
         "Body": "Blue",
-        "Head": "Yellow",
-        "Face": "Yellow",
-        "Hair": "Green",
+        "Head": "Green",
+        "Face": "Green",
+        "Hair": "Blue",
         "tokenId": 1
     },
     {
-        "Background": "Blue",
-        "Body": "Orange",
-        "Head": "Yellow",
-        "Face": "Orange",
-        "Hair": "Blue",
+        "Background": "Purple",
+        "Body": "Green",
+        "Head": "Red",
+        "Face": "Blue",
+        "Hair": "Orange",
         "tokenId": 2
     },
     {
         "Background": "Blue",
-        "Body": "Orange",
-        "Head": "Green",
-        "Face": "Yellow",
-        "Hair": "Green",
-        "tokenId": 3
-    },
-    {
-        "Background": "Orange",
-        "Body": "Orange",
-        "Head": "Green",
-        "Face": "Green",
+        "Body": "Red",
+        "Head": "Blue",
+        "Face": "Blue",
         "Hair": "Yellow",
-        "tokenId": 4
+        "tokenId": 3
     },
     {
         "Background": "Blue",
         "Body": "Blue",
         "Head": "Red",
-        "Face": "Green",
+        "Face": "Blue",
+        "Hair": "Blue",
+        "tokenId": 4
+    },
+    {
+        "Background": "Orange",
+        "Body": "Blue",
+        "Head": "Blue",
+        "Face": "Orange",
         "Hair": "Red",
         "tokenId": 5
     },
     {
         "Background": "Purple",
-        "Body": "Orange",
-        "Head": "Blue",
-        "Face": "Blue",
-        "Hair": "Green",
+        "Body": "Green",
+        "Head": "Green",
+        "Face": "Green",
+        "Hair": "Red",
         "tokenId": 6
     },
     {
-        "Background": "Blue",
+        "Background": "Yellow",
         "Body": "Blue",
-        "Head": "Blue",
+        "Head": "Red",
         "Face": "Blue",
-        "Hair": "Green",
+        "Hair": "Blue",
         "tokenId": 7
     },
     {
-        "Background": "Orange",
-        "Body": "Green",
-        "Head": "Yellow",
-        "Face": "Red",
-        "Hair": "Blue",
+        "Background": "Blue",
+        "Body": "Red",
+        "Head": "Blue",
+        "Face": "Green",
+        "Hair": "Red",
         "tokenId": 8
     },
     {
         "Background": "Orange",
-        "Body": "Green",
-        "Head": "Blue",
-        "Face": "Red",
-        "Hair": "Yellow",
+        "Body": "Orange",
+        "Head": "Red",
+        "Face": "Green",
+        "Hair": "Red",
         "tokenId": 9
     }
 ]
